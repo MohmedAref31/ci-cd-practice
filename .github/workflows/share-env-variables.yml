@@ -11,11 +11,11 @@ jobs:
 
     steps:
       - name: Print env variable before setting it
-        run: echo "MY_ENV_VAR before setting: $MY_ENV_VAR"
+        run: echo "MY_ENV_VAR before setting: ${{MY_ENV_VAR}}"
 
      - name: Set environment variable for next steps
         run: echo "MY_ENV_VAR=HelloWorldUpdated" >> $GITHUB_ENV
 
       - name: Print env variable after setting it
-        run: echo "MY_ENV_VAR after setting: $MY_ENV_VAR"
+        run: echo "MY_ENV_VAR after setting: ${{MY_ENV_VAR}}"
 
