@@ -1,6 +1,6 @@
 name: Matrixes
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
@@ -25,3 +25,8 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Display environment
+        run: |
+          echo "Running on OS: ${{ matrix.os }}"
+          echo "Using Node.js version: ${{ matrix.node-version }}"
