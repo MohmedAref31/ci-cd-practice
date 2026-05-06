@@ -1,0 +1,20 @@
+name: Manual Trigger Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print hello message
+        run: echo "Hello world from manual trigger workflow"
+
+      - name: print environment variables
+        run: printenv
+        
+      - name: pull code from the repo
+        uses: actions/checkout@v6.0.2
+
+      - name: list the repo files
+        run: ls -la
