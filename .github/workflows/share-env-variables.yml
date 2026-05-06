@@ -1,0 +1,20 @@
+name: Share environment variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  share-env-vars:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print env variable before setting it
+        run: echo "MY_ENV_VAR before setting: $MY_ENV_VAR"  
+      
+      - name: Set environment variable  
+        run: echo "MY_ENV_VAR=HelloWorld" >> $GITHUB_ENV
+
+      - name: Print env variable after setting it
+        run: echo "MY_ENV_VAR after setting: $MY_ENV_VAR"
+
+        
