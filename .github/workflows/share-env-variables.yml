@@ -13,9 +13,16 @@ jobs:
       - name: Print env variable before setting it
         run: echo "MY_ENV_VAR before setting:${{env.MY_ENV_VAR}}"
 
+      - name: Set environment without using GITHUB_ENV
+        run: |
+          echo "MY_ENV_VAR=HelloWorldUpdated" >> $GITHUB_ENV 
+          echo "MY_ENV_VAR after setting without GITHUB_ENV:${{env.MY_ENV_VAR}}"
+
+      - name: Print env variable after setting it without GITHUB_ENV
+        run: echo "MY_ENV_VAR after setting without GITHUB_ENV:${{env.MY_ENV_VAR}}"
+
       - name: Set environment variable for next steps
         run: echo "MY_ENV_VAR=HelloWorldUpdated" >> $GITHUB_ENV
 
       - name: Print env variable after setting it
         run: echo "MY_ENV_VAR after setting:${{env.MY_ENV_VAR}}"
-
