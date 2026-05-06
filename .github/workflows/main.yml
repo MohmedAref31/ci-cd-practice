@@ -11,3 +11,9 @@ jobs:
     steps:
       - name: Print hello message
         run: echo "Hello wrold from ci/cd"
+
+      - name: pull code from the repo
+        uses: actions/checkout@v6.0.2
+
+      - name: list the repo files
+        run: ls
