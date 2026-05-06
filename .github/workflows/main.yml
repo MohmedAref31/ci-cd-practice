@@ -1,0 +1,13 @@
+name:  My first workflow
+on: 
+  push:
+    branches: 
+      - main
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print hello message
+        run: echo "Hello wrold from ci/cd"
